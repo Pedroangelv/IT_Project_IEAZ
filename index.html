@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú de Minijuegos y Historia</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Menú de navegación -->
+    <nav>
+      <button onclick="showSection('menu-minijuegos')">Minijuegos</button>
+      <button onclick="showSection('historia')">Historia</button>
+      <button onclick="showSection('simbolos')">Símbolos</button>
+    </nav>
+
+    <!-- Sección de Menú de Minijuegos -->
+    <div id="menu-minijuegos" class="section hidden">
+      <h2>Selecciona un Minijuego</h2>
+      <div id="minijuegos-container" class="grid-container"></div>
+    </div>
+
+    <!-- Sección de Historia -->
+    <div id="historia" class="section hidden">
+      <h2>Historia</h2>
+      <p>
+        Explora la historia detrás de los símbolos y los minijuegos. Aquí
+        aprenderás sobre la institución representada.
+      </p>
+    </div>
+
+    <!-- Sección de Símbolos -->
+    <div id="simbolos" class="section hidden">
+      <h2>Símbolos</h2>
+      <p>
+        Aquí están los símbolos de la institución que podrás desbloquear al
+        ganar minijuegos.
+      </p>
+      <div id="simbolos-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
