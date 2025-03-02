@@ -43,19 +43,19 @@ function cargarMenuMinijuegos() {
   // Agregar contenido dinámico para los minijuegos
   const minijuegos = [
     {
-      nombre: "Adivina el Número",
+      nombre: "Madrugón",
       imagen: "game_image1.jpg",
-      id: "adivina-numero",
+      id: "Madrugón",
     },
     {
-      nombre: "Juego de Memoria",
+      nombre: "Basura",
       imagen: "game_image1.jpg",
-      id: "juego-memoria",
+      id: "Basura",
     },
     {
-      nombre: "Juego de Puntos",
+      nombre: "TriviAZ",
       imagen: "game_image1.jpg",
-      id: "juego-puntos",
+      id: "TriviAZ",
     },
   ];
 
