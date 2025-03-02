@@ -100,10 +100,22 @@ function cargarSimbolos() {
 
     simboloDiv.innerHTML = `
             <h3>${simbolo.nombre}</h3>
-            <img src="${simbolo.imfagen}" alt="${simbolo.nombre}" style="width: 150px;">
+            <img src="${simbolo.imagen}" alt="${simbolo.nombre}" style="width: 150px;">
             <p>${simbolo.descripcion}</p>
         `;
-
     container.appendChild(simboloDiv); // Agregar el div al contenedor
   });
+  const himno = {
+    nombre: "Himno de la Institucion Educativa Alfonso Zawadzky",
+    archivo: "himno.pdf",
+    descripcion: "Himno institucional",
+  };
+  let himnoDiv = document.createElement("div");
+  himnoDiv.classList.add("simbolo");
+  himnoDiv.innerHTML = `
+          <h3>${himno.nombre}</h3>
+            <embed class="pdf" src="${himno.archivo}" width="80" height="600">
+            <p>${himno.descripcion}</p>
+        `;
+  container.appendChild(himnoDiv);
 }

@@ -50,3 +50,7 @@ img {
   height: 100px;
   object-fit: cover;
 }
+.pdf {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
