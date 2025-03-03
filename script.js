@@ -102,9 +102,9 @@ function cargarSimbolos() {
       descripcion: "Escudo representativo",
     },
     {
-      nombre: "Insignia de Honor",
+      nombre: "Bandera",
       imagen: "game_image1.jpg",
-      descripcion: "Insignia especial",
+      descripcion: "Bandera",
     },
   ];
 
