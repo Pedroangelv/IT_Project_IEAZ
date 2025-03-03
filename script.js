@@ -35,6 +35,8 @@ function showSection(sectionId) {
   }
 }
 
+//Funcion para cargar la pagina del minijuego
+
 // Función para cargar los minijuegos en el menú
 function cargarMenuMinijuegos() {
   let container = document.getElementById("minijuegos-container");
@@ -46,16 +48,19 @@ function cargarMenuMinijuegos() {
       nombre: "Madrugón",
       imagen: "game_image1.jpg",
       id: "Madrugón",
+      archivo: "",
     },
     {
       nombre: "Basura",
       imagen: "game_image1.jpg",
       id: "Basura",
+      archivo: "",
     },
     {
       nombre: "TriviAZ",
       imagen: "game_image1.jpg",
       id: "TriviAZ",
+      archivo: "Games/Trivia/index.html",
     },
   ];
 
@@ -65,13 +70,23 @@ function cargarMenuMinijuegos() {
     minijuegoDiv.classList.add("minijuego");
 
     minijuegoDiv.innerHTML = `
-            <h3>${minijuego.nombre}</h3>
-            <img src="${minijuego.imagen}" alt="${minijuego.nombre}" style="width: 100px;">
-            <button onclick="alert('¡Inicia el minijuego ${minijuego.nombre}!')">Jugar</button>
-        `;
+      <h3>${minijuego.nombre}</h3>
+      <img src="${minijuego.imagen}" alt="${minijuego.nombre}" style="width: 100px;">
+      <button onclick="jugarMinijuego('${minijuego.nombre}', '${minijuego.archivo}')">Jugar</button>
+    `;
 
     container.appendChild(minijuegoDiv); // Agregar el div al contenedor
   });
+}
+// Función para manejar la navegación al minijuego
+function jugarMinijuego(nombre, archivo) {
+  if (!archivo) {
+    alert("Este minijuego aún no está disponible.");
+    return;
+  }
+  if (confirm(`¿Quieres jugar ${nombre}?`)) {
+    window.location.href = archivo;
+  }
 }
 
 // Función para cargar los símbolos desbloqueables
