@@ -1,0 +1,14 @@
+[
+    {
+        "categoria": "paises",
+        "pregunta": "capital  de colombia ",
+        "respuesta": "bogota",
+        "incorrecta1": "cali",
+        "icorrecta2": "medellin",
+        "incorrecta3": "pasto",
+        "imagen": "https://images.app.goo.gl/iQysv1qnULiF8kb1A",
+        "object_fit": "cover"
+
+ 
+    }
+]
