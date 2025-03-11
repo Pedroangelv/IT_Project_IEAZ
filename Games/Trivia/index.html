@@ -1,119 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jueog de preguntas</title>
-</head>
-<body>
-    <style>
-    *{
-        transition: all 0.3s;
-    }       
-        body {
-            background: salmon;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-        .contenedor{
-            width: 100vw;
-            height: 100vh;
-            display: inline-flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .encabezado {
-            background: white;
-            min-width: 300px;
-            width: 70%;
-            padding: 10px;
-        }
-        .categoria{
-            opacity: 0.3;
-            text-align: left;
-        }
-        .pregunta{
-            padding: 10px;
-        }
-        .imagen{
-            object-fit: cover;
-            height: 200px;
-            width: 100%;
-        }
-        .btn{
-            background: white;
-            width: 60%;
-            padding: 10px;
-            margin: 5px;
-
-        }
-        .btn:hover{
-            background: yellow;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="contenedor">
-        <div class="encabezado">
-            <div class="categoria" id="categoria">
-                categoria
-            </div>
-            <div class="pregunta" id="pregunta">
-                pregunta         
-            </div>
-            <img src="" class="imagen" id="imagen">
-
-        </div>
-        <div class="btn" id="btn1">
-            opcion1
-        </div>
-        <div class="btn" id="btn2">
-            opcion2
-        </div>
-        <div class="btn" id="btn3">
-            opcion3
-        </div>
-        <div class="btn" id="btn4">
-            opcion4
-        </div>
-
+      <div class="encabezado">
+        <div class="categoria" id="categoria">categoria</div>
+        <div class="pregunta" id="pregunta">pregunta</div>
+        <img src="" class="imagen" id="imagen" />
+      </div>
+      <div class="btn" id="btn1">opcion1</div>
+      <div class="btn" id="btn2">opcion2</div>
+      <div class="btn" id="btn3">opcion3</div>
+      <div class="btn" id="btn4">opcion4</div>
     </div>
-    <script>
-        
-        éscogerPregunta(0)
-            
-        function escogerPregunta (n) {
-            let base_pregunta = readText("base-preguntas.json")
-            let interprete_bp = JSON.parse(base_preguntas)
-            pregunta = interprete_bp [n]
-            select_id("categoria").innerHTML = pregunta.categoria
-            select_id("pregunta").innerHTML = pregunta.pregunta
-        }
-
-
-        function select_id(id) {
-            return document.getElementById
-        }
-        function style(id) {
-            return select_id(id).style
-        }
-
-        function readText(ruta_local) {
-            var texto = null;
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", ruta_local, false);
-            xmlhttp.send();
-           if (xmlhttp.status = 200) {
-            texto = xmlhttp.responseText;
-           }
-           return texto;
-
-        }
-
-    </script>
-
-
-    
-</body>
+  </body>
 </html>
