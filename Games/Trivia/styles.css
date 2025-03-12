@@ -1,15 +1,18 @@
 * {
   transition: all 0.3s;
+  
 }
 body {
-  background: salmon;
+  background: blueviolet;
   padding: 0;
   margin: 0;
   text-align: center;
+  font-family: calibri;
+  font-size: 120%;
 }
 .contenedor {
-  width: 100vw;
-  height: 100vh;
+  width: 98vw;
+  height: 97vh;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -42,4 +45,5 @@ body {
 .btn:hover {
   background: yellow;
   cursor: pointer;
+  transform: scale(1.05);
 }
