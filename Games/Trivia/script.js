@@ -1,9 +1,21 @@
+let preguntas_aleatorias = false
+
+
+
 let base_preguntas = readText("base-preguntas.json")
 let interprete_bp = JSON.parse(base_preguntas)
 let pregunta
 let posibles_respuestas
+let btn_correspondiente = [
+  select_id("btn1"), select_id("btn2"),
+  select_id("btn3"), select_id("btn4")
+]
 
 escogerPreguntaAleatoria()
+  
+
+
+
 
 function escogerPreguntaAleatoria(){
   escogerPregunta(Math.floor(Math.random()*interprete_bp.length))
@@ -15,7 +27,7 @@ function escogerPregunta(n) {
   select_id("categoria").innerHTML = pregunta.categoria
   select_id("pregunta").innerHTML = pregunta.pregunta
   style("imagen").objectfit = pregunta.objectfit;
-  desordenarPregunta(pregunta)
+  desordenarRespuestas(pregunta)
   if(pregunta.imagen){
     select_id("imagen").setAttribute("src" ,pregunta.imagen)
     style("imagen").height="200px"
@@ -32,7 +44,7 @@ let btns = [
   select_id("btn3"),
   select_id("btn4")
 ]
-function desordenarRespuestas(preguntas) {
+function desordenarRespuestas(pregunta) {
    posibles_respuestas = [ 
     pregunta.respuesta, 
     pregunta.incorrecta1, 
@@ -47,10 +59,24 @@ function desordenarRespuestas(preguntas) {
   select_id("btn4").innerHTML = posibles_respuestas[3]
 }
 
-function oprimir_btn(i){
-  console.log(posibles_respuestas[i])
-  
+function oprimir_btn(i) {
+ if (posibles_respuestas[i]==pregunta.respuesta){
+  btn_correspondiente[i].style.background = "lightgreen"
+ }else{
+  btn_correspondiente[i].style.background = "red"
+ }
+ setTimeout(() => {
+  reiniciar()
+ }, 300);
+ 
 }
+
+function reiniciar(){
+  for (const btn of btn_correspondiente) {
+    btn.style.background = "white"
+  }
+  escogerPreguntaAleatoria()
+ }
 function btn(i){
 
 }

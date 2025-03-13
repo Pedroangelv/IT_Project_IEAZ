@@ -19,12 +19,20 @@
     },
       
     {
-        "categoria": "Fundacion del colegio",
+        "categoria": "fundacion del colegio",
         "pregunta": "¿En que año se fundo el colegio?",
-        "respuesta": "1940",
+        "respuesta": "1963",
         "incorrecta1": "1967",
         "incorrecta2": "1943",
         "incorrecta3": "1894"
+    },
+    {
+        "categoria": "bandera del colegio",
+        "pregunta": "¿que colores lleva la bandera del colegio?",
+        "respuesta": "amarillo-blanco-verde",
+        "incorrecta1": "verde-rojo-blanco",
+        "incorrecta2": "blanco-verde-amarillo",
+        "incorrecta3": "amarillo-rojo-verde"
     }
 
 
