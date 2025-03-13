@@ -1,29 +1,30 @@
 [
     {
         "categoria": "Paises",
-        "pregunta": "Capital  de Colombia ",
+        "pregunta": "¿Capital  de Colombia? ",
         "respuesta": "Bogota",
         "incorrecta1": "Cali",
         "incorrecta2": "Medellin",
         "incorrecta3": "Pasto",
         "imagen": "download.jfif",
         "object_fit": "cover"
-    }
+    },
     {
         "categoria": "Areas",
-        "pregunta": "cual es el profesor de quimica",
+        "pregunta": "¿Cual es el profesor de quimica?",
         "respuesta": "Ceballos",
         "incorrecta1": "Mayorga",
         "incorrecta2": "Arley",
         "incorrecta3": "William"
-    }
+    },
+      
     {
-        "categoria": "fundacion del colegio",
-        "pregunta": "que año se fundo el colegio",
+        "categoria": "Fundacion del colegio",
+        "pregunta": "¿En que año se fundo el colegio?",
         "respuesta": "1940",
-        "incorrecta1" : "1967",
-        "incorrecta2" : "1943",
-        "incorrecta3" : "1894"
+        "incorrecta1": "1967",
+        "incorrecta2": "1943",
+        "incorrecta3": "1894"
     }
 
 
