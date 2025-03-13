@@ -1,7 +1,5 @@
-let preguntas_aleatorias = false
-
-
-
+let totalPreguntas = 4
+let preguntasContestadas = 0
 let base_preguntas = readText("base-preguntas.json")
 let interprete_bp = JSON.parse(base_preguntas)
 let pregunta
@@ -12,9 +10,7 @@ let btn_correspondiente = [
 ]
 
 escogerPreguntaAleatoria()
-  
-
-
+actualizarContador()
 
 
 function escogerPreguntaAleatoria(){
@@ -26,7 +22,7 @@ function escogerPregunta(n) {
   pregunta = interprete_bp[n]
   select_id("categoria").innerHTML = pregunta.categoria
   select_id("pregunta").innerHTML = pregunta.pregunta
-  style("imagen").objectfit = pregunta.objectfit;
+  style("imagen").objectFit = pregunta.objectFit;
   desordenarRespuestas(pregunta)
   if(pregunta.imagen){
     select_id("imagen").setAttribute("src" ,pregunta.imagen)
@@ -52,6 +48,10 @@ function desordenarRespuestas(pregunta) {
     pregunta.incorrecta3
   ]
   posibles_respuestas.sort(() => Math.random() -0.5)
+   
+  for (let i = 0; i < 4; i++) {
+    btn_correspondiente[i].innerHTML = posibles_respuestas[i]
+  }
 
   select_id("btn1").innerHTML = posibles_respuestas[0]
   select_id("btn2").innerHTML = posibles_respuestas[1]
@@ -70,15 +70,28 @@ function oprimir_btn(i) {
  }, 300);
  
 }
-
-function reiniciar(){
-  for (const btn of btn_correspondiente) {
+function reiniciar() {
+  preguntasContestadas++
+  actualizarContador()
+  if (preguntasContestadas >= totalPreguntas) {
+    alert(" Juego Terminado ")
+    preguntasContestadas = 0
+    actualizarContador()
+   }
+   for (const btn of btn_correspondiente) {
     btn.style.background = "white"
   }
   escogerPreguntaAleatoria()
- }
-function btn(i){
 
+}
+
+
+
+
+ 
+
+function actualizarContador() {
+  select_id("contador").innerHTML = `${preguntasContestadas}/${totalPreguntas}`
 }
 
 function select_id(id) {
@@ -93,7 +106,7 @@ function readText(ruta_local) {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open("GET", ruta_local, false);
   xmlhttp.send();
-  if ((xmlhttp.status = 200)) {
+  if ((xmlhttp.status == 200)) {
     texto = xmlhttp.responseText;
   }
   return texto;
