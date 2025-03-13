@@ -2,6 +2,7 @@ let totalPreguntas = 4
 let preguntasContestadas = 0
 let base_preguntas = readText("base-preguntas.json")
 let interprete_bp = JSON.parse(base_preguntas)
+let preguntasDisponibles = [...interprete_bp]
 let pregunta
 let posibles_respuestas
 let btn_correspondiente = [
@@ -14,12 +15,22 @@ actualizarContador()
 
 
 function escogerPreguntaAleatoria(){
-  escogerPregunta(Math.floor(Math.random()*interprete_bp.length))
+  escogerPregunta.length === 0
+  if (preguntasDisponibles.length === 0){
+    alert(" Juego Terminado ")
+    preguntasDisponibles = [...interprete_bp]
+    preguntasContestadas = 0
+    actualizarContador()
+  }
+  let indice = Math.floor(Math.random() * preguntasDisponibles.length)
+  escogerPregunta(indice)
 }
+
   
 
 function escogerPregunta(n) {
-  pregunta = interprete_bp[n]
+  pregunta = preguntasDisponibles[n]
+  preguntasDisponibles.splice(n, 1)
   select_id("categoria").innerHTML = pregunta.categoria
   select_id("pregunta").innerHTML = pregunta.pregunta
   style("imagen").objectFit = pregunta.objectFit;
@@ -75,6 +86,7 @@ function reiniciar() {
   actualizarContador()
   if (preguntasContestadas >= totalPreguntas) {
     alert(" Juego Terminado ")
+    preguntasDisponibles = [...interprete_bp]
     preguntasContestadas = 0
     actualizarContador()
    }
