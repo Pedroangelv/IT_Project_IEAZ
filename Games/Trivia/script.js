@@ -124,15 +124,23 @@ function reiniciar() {
       title: "¡Juego Terminado!",
       text: "Has respondido todas las preguntas.",
       icon: "success",
+      showCancelButton: true,
       confirmButtonText: "Reiniciar",
+      cancelButtonText: "Ir a inicio",
       allowOutsideClick: false
-    }).then(() => {
-      // Se reinician las preguntas disponibles y el contador
-      preguntasDisponibles = [...interprete_bp]
-      preguntasContestadas = 0
-      actualizarContador()
-      escogerPreguntaAleatoria()
-    })
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Se reinician las preguntas disponibles y el contador
+        preguntasDisponibles = [...interprete_bp]
+        preguntasContestadas = 0
+        actualizarContador()
+        escogerPreguntaAleatoria()
+    }else if (result.dismiss === Swal.DismissReason.cancel){
+      // Redirigir a otra pagina
+      window.location.href = "../../index.html"
+    }
+    
+  });
   }
 
   // Se restablecen los colores de los botones
