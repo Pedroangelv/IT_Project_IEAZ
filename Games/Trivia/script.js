@@ -15,9 +15,9 @@ actualizarContador()
 
 
 function escogerPreguntaAleatoria(){
-  escogerPregunta.length === 0
+  preguntasDisponibles.length === 0
   if (preguntasDisponibles.length === 0){
-    alert(" Juego Terminado ")
+    
     preguntasDisponibles = [...interprete_bp]
     preguntasContestadas = 0
     actualizarContador()
@@ -85,10 +85,20 @@ function reiniciar() {
   preguntasContestadas++
   actualizarContador()
   if (preguntasContestadas >= totalPreguntas) {
-    alert(" Juego Terminado ")
+    swal.fire({
+      title: "!Juego Terminado¡",
+      Text: "Has respondido todas las preguntas.",
+     icon: "success",
+     confirmButtonText: "Reiniciar",
+     allowOutsideClick: false
+    }).then(() => {
+      
     preguntasDisponibles = [...interprete_bp]
     preguntasContestadas = 0
     actualizarContador()
+    escogerPreguntaAleatoria()
+    })
+   
    }
    for (const btn of btn_correspondiente) {
     btn.style.background = "white"
