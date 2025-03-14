@@ -46,7 +46,7 @@ function cargarMenuMinijuegos() {
   const minijuegos = [
     {
       nombre: "Madrugón",
-      imagen: "game_image1.jpg",
+      imagen: "",
       id: "Madrugón",
       archivo: "",
     },
@@ -98,12 +98,12 @@ function cargarSimbolos() {
   const simbolos = [
     {
       nombre: "Escudo de la Institución",
-      imagen: "game_image1.jpg",
+      imagen: "Logo-zawadzky-1.jpe",
       descripcion: "Escudo representativo",
     },
     {
       nombre: "Bandera",
-      imagen: "game_image1.jpg",
+      imagen: "Bandera-Zawadzky-300x207.png",
       descripcion: "Bandera",
     },
   ];
