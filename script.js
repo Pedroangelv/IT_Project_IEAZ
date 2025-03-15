@@ -98,13 +98,21 @@ function cargarSimbolos() {
   const simbolos = [
     {
       nombre: "Escudo de la Institución",
-      imagen: "Logo-zawadzky-1.jpe",
+      archivo: "Logo-zawadzky-1.jpe",
       descripcion: "Escudo representativo",
     },
     {
       nombre: "Bandera",
-      imagen: "Bandera-Zawadzky-300x207.png",
-      descripcion: "Bandera",
+      archivo: "Bandera-Zawadzky-300x207.png",
+      descripcion: "Bandera de la Institución",
+    
+    },
+    {
+      nombre: "himno",
+      archivo: "himno.pdf",
+      descripcion: "Himno institucional",
+      esPdf: true //propiedad para los pdf
+
     },
   ];
 
@@ -112,25 +120,20 @@ function cargarSimbolos() {
   simbolos.forEach((simbolo) => {
     let simboloDiv = document.createElement("div");
     simboloDiv.classList.add("simbolo");
+    let contenido;
+    if (simbolo.esPdf){
+      contenido = `<embed class=".pdf" src"${simbolo.archivo}">`;
+    }else {
+      contenido = `<img src="${simbolo.archivo}`;
+    }
 
     simboloDiv.innerHTML = `
+          <div id="${simbolos.nombre}" class="bloqueado">
             <h3>${simbolo.nombre}</h3>
-            <img src="${simbolo.imagen}" alt="${simbolo.nombre}" style="width: 150px;">
+            ${contenido}
             <p>${simbolo.descripcion}</p>
+          </div>  
         `;
     container.appendChild(simboloDiv); // Agregar el div al contenedor
   });
-  const himno = {
-    nombre: "Himno de la Institucion Educativa Alfonso Zawadzky",
-    archivo: "himno.pdf",
-    descripcion: "Himno institucional",
-  };
-  let himnoDiv = document.createElement("div");
-  himnoDiv.classList.add("simbolo");
-  himnoDiv.innerHTML = `
-          <h3>${himno.nombre}</h3>
-            <embed class="pdf" src="${himno.archivo}" width="80" height="600">
-            <p>${himno.descripcion}</p>
-        `;
-  container.appendChild(himnoDiv);
 }
