@@ -100,12 +100,13 @@ function cargarSimbolos() {
       nombre: "Escudo de la Institución",
       archivo: "Logo-zawadzky-1.jpe",
       descripcion: "Escudo representativo",
+      esPdf: false
     },
     {
       nombre: "Bandera",
       archivo: "Bandera-Zawadzky-300x207.png",
       descripcion: "Bandera de la Institución",
-    
+      esPdf: false    
     },
     {
       nombre: "himno",
@@ -122,9 +123,10 @@ function cargarSimbolos() {
     simboloDiv.classList.add("simbolo");
     let contenido;
     if (simbolo.esPdf){
-      contenido = `<embed class=".pdf" src"${simbolo.archivo}">`;
+      contenido = `<embed class="pdf" src="${simbolo.archivo}" width="80" height="600">`;
     }else {
-      contenido = `<img src="${simbolo.archivo}`;
+      contenido = `<img src="${simbolo.archivo}" alt="${simbolo.nombre}" style="width: 150px;">`;
+      
     }
 
     simboloDiv.innerHTML = `
