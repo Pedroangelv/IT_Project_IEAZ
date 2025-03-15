@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".section").forEach((section) => {
     section.classList.add("hidden");
   });
+  inicializarSimbolos();
+  cargarSimbolos();
 });
 
 // Función para mostrar y ocultar secciones
@@ -88,27 +90,24 @@ function jugarMinijuego(nombre, archivo) {
     window.location.href = archivo;
   }
 }
-
-// Función para cargar los símbolos desbloqueables
-function cargarSimbolos() {
-  let container = document.getElementById("simbolos-container");
-  container.innerHTML = ""; // Limpiar el contenedor antes de agregar nuevos elementos
-
-  // Crear el contenido dinámico para los símbolos
-  const simbolos = [
+//Simbolos informacion
+const simbolos = [
     {
+      id: "Escudo",
       nombre: "Escudo de la Institución",
       archivo: "Logo-zawadzky-1.jpe",
       descripcion: "Escudo representativo",
       esPdf: false
     },
-    {
+    { 
+      id: "Bandera",
       nombre: "Bandera",
       archivo: "Bandera-Zawadzky-300x207.png",
       descripcion: "Bandera de la Institución",
       esPdf: false    
     },
-    {
+    { 
+      id: "Himno",
       nombre: "himno",
       archivo: "himno.pdf",
       descripcion: "Himno institucional",
@@ -116,21 +115,32 @@ function cargarSimbolos() {
 
     },
   ];
-
+inicializarSimbolos();
+let estados = obtenerEstadoSimbolos();
+// Función para cargar los símbolos desbloqueables
+function cargarSimbolos() {
+  let container = document.getElementById("simbolos-container");
+  container.innerHTML = ""; // Limpiar el contenedor antes de agregar nuevos elementos
+  
   // Crear los elementos para cada símbolo
   simbolos.forEach((simbolo) => {
     let simboloDiv = document.createElement("div");
     simboloDiv.classList.add("simbolo");
-    let contenido;
-    if (simbolo.esPdf){
-      contenido = `<embed class="pdf" src="${simbolo.archivo}" width="80" height="600">`;
-    }else {
-      contenido = `<img src="${simbolo.archivo}" alt="${simbolo.nombre}" style="width: 150px;">`;
-      
-    }
+    let claseEstado = estados[simbolo.id] === "bloqueado" ? "bloqueado" : "desbloqueado"
 
+    let contenido;
+    if (estados[simbolo.id] === "bloqueado"){
+      contenido = `<span class="candado">🔒</span>`;
+    }else{
+      if (simbolo.esPdf){
+        contenido = `<embed class="${claseEstado}" src="${simbolo.archivo}" width="600" height="800">`;
+      }else {
+        contenido = `<img src="${simbolo.archivo}" alt="${simbolo.nombre}" class="${claseEstado}" style="width: 150px;">`;
+      
+      }
+    }
     simboloDiv.innerHTML = `
-          <div id="${simbolos.nombre}" class="bloqueado">
+          <div id="${simbolos.nombre}" class="${claseEstado}">
             <h3>${simbolo.nombre}</h3>
             ${contenido}
             <p>${simbolo.descripcion}</p>
@@ -138,4 +148,20 @@ function cargarSimbolos() {
         `;
     container.appendChild(simboloDiv); // Agregar el div al contenedor
   });
+}
+
+function inicializarSimbolos() {
+  if (!localStorage.getItem("simbolos")){
+    //En caso de no tener el json o que se halla dañado
+    const estadoInicial = {
+      Escudo: "bloqueado",
+      Bandera: "bloqueado",
+      Himno: "desbloqueado"
+    };
+    localStorage.setItem("simbolos", JSON.stringify(estadoInicial));
+  }
+  
+}
+function obtenerEstadoSimbolos() {
+  return JSON.parse(localStorage.getItem("simbolos")) || {};
 }

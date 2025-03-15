@@ -49,8 +49,29 @@ img {
   width: 150px;
   height: 150px;
   object-fit: cover;
+  border: 2px red;
 }
 .pdf {
   width: 100%;
   aspect-ratio: 4 / 3;
 }
+
+.bloqueado img {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+.desbloqueado img {
+  filter: none;
+  opacity: 1;
+}
+.candado {
+  font-size: 100px; /* Tamaño similar a la imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
