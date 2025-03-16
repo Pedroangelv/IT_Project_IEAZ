@@ -137,7 +137,7 @@ function cargarSimbolos() {
       }else {
         contenido = `<img src="${simbolo.archivo}" alt="${simbolo.nombre}" class="${claseEstado}" style="width: 150px;">`;
       
-      }
+      } 
     }
     simboloDiv.innerHTML = `
           <div id="${simbolos.nombre}" class="${claseEstado}">
@@ -153,10 +153,10 @@ function cargarSimbolos() {
 function inicializarSimbolos() {
   if (!localStorage.getItem("simbolos")){
     //En caso de no tener el json o que se halla dañado
-    const estadoInicial = {
+    let estadoInicial = {
       Escudo: "bloqueado",
       Bandera: "bloqueado",
-      Himno: "desbloqueado"
+      Himno: "bloqueado"
     };
     localStorage.setItem("simbolos", JSON.stringify(estadoInicial));
   }
