@@ -106,6 +106,11 @@ function reiniciar() {
     let simbolos = obtenerEstadoSimbolos();
     simbolos.Escudo = "desbloqueado";
     localStorage.setItem("simbolos", JSON.stringify(simbolos));
+    swal.fire({
+      title: "¡Logro desbloqueado!",
+      text: "Has desbloqueado el escudo institucional",
+      icon: "info"
+    })
   }
 
   if (preguntasContestadas >= totalPreguntas) {
