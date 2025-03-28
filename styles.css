@@ -74,4 +74,9 @@ img {
   background-color: #f9f9f9;
   border-radius: 5px;
 }
-
+#Names {
+  background-color: #4caf50;
+  text-align: center;
+  border-radius: 20px;
+  list-style-position: inside;
+}
