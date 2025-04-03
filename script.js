@@ -97,7 +97,7 @@ function jugarMinijuego(nombre, archivo) {
       showDenyButton: true,
       confirmButtonText: "Jugar",
       denyButtonText: "Cancelar"
-    }).then(result)=>{
+    }).then(result) => {
       if (result.isConfirmed) {
         window.location.href = "${archivo}" 
       };
