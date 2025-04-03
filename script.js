@@ -89,7 +89,7 @@ function jugarMinijuego(nombre, archivo) {
       icon: "error"
     });
     return;
-  } else{
+  } else {
     swal.fire({
       title: "${nombre}",
       text: "Quieres jugar ${nombre}",
@@ -101,7 +101,7 @@ function jugarMinijuego(nombre, archivo) {
       if (result.isConfirmed) {
         window.location.href = "${archivo}"; 
       }});
-    
+   //oooh que sera 
   } 
 }
 //Simbolos informacion
