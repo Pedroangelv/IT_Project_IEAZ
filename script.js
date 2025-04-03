@@ -91,15 +91,15 @@ function jugarMinijuego(nombre, archivo) {
     return;
   } else {
     swal.fire({
-      title: "${nombre}",
-      text: "Quieres jugar ${nombre}",
+      title: `${nombre}`,
+      text: `Quieres jugar ${nombre}?`,
       icon: "question",
       showDenyButton: true,
       confirmButtonText: "Jugar",
       denyButtonText: "Cancelar"
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "${archivo}"; 
+        window.location.href = archivo; 
       }});
    //oooh que sera 
   } 
