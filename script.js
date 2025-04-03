@@ -99,7 +99,7 @@ function jugarMinijuego(nombre, archivo) {
       denyButtonText: "Cancelar"
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "${archivo}" 
+        window.location.href = "${archivo}"; 
       });
     }
   } 
