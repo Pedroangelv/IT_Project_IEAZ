@@ -100,8 +100,8 @@ function jugarMinijuego(nombre, archivo) {
     }).then((result) => {
       if (result.isConfirmed) {
         window.location.href = "${archivo}"; 
-      });
-    }
+      }});
+    
   } 
 }
 //Simbolos informacion
