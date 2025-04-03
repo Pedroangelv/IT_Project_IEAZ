@@ -83,12 +83,26 @@ function cargarMenuMinijuegos() {
 // Función para manejar la navegación al minijuego
 function jugarMinijuego(nombre, archivo) {
   if (!archivo) {
-    alert("Este minijuego aún no está disponible.");
+    swal.fire({
+      title: "Juego no encontrado",
+      text: "Juego disponible en breve...",
+      icon: "error"
+    });
     return;
-  }
-  if (confirm(`¿Quieres jugar ${nombre}?`)) {
-    window.location.href = archivo;
-  }
+  } else {
+    swal.fire({
+      title: "${nombre}",
+      text: "Quieres jugar ${nombre}",
+      icon: "question",
+      showDenyButton: true,
+      confirmButtonText: "Jugar",
+      denyButtonText: "Cancelar"
+    }).then(result)=>{
+      if (result.isConfirmed) {
+        window.location.href = "${archivo}" 
+      }
+    }
+  } 
 }
 //Simbolos informacion
 const simbolos = [
