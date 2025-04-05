@@ -54,13 +54,13 @@ function cargarMenuMinijuegos() {
     },
     {
       nombre: "Basura",
-      imagen: "game_image1.jpg",
+      imagen: "",
       id: "Basura",
       archivo: "",
     },
     {
       nombre: "TriviAZ",
-      imagen: "game_image1.jpg",
+      imagen: "",
       id: "TriviAZ",
       archivo: "Games/Trivia/index.html",
     },
@@ -109,21 +109,21 @@ const simbolos = [
     {
       id: "Escudo",
       nombre: "Escudo de la Institución",
-      archivo: "Logo-zawadzky-1.jpe",
+      archivo: "Assets/main/Logo-zawadzky-1.jpe",
       descripcion: "Escudo representativo",
       esPdf: false
     },
     { 
       id: "Bandera",
       nombre: "Bandera",
-      archivo: "Bandera-Zawadzky-300x207.png",
+      archivo: "Assets/main/Bandera-Zawadzky-300x207.png",
       descripcion: "Bandera de la Institución",
       esPdf: false    
     },
     { 
       id: "Himno",
       nombre: "himno",
-      archivo: "himno.pdf",
+      archivo: "Assets/main/himno.pdf",
       descripcion: "Himno institucional",
       esPdf: true //propiedad para los pdf
 
