@@ -6,7 +6,7 @@
         "incorrecta1": "Cali",
         "incorrecta2": "Medellin",
         "incorrecta3": "Pasto",
-        "imagen": "Assets/trivia/download.jfif",
+        "imagen": "../../Assets/trivia/download.jfif",
         "object_fit": "cover"
     },
     {
