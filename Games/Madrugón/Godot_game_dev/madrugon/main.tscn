@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://dg115ysgsct88"]
+
+[ext_resource type="Script" uid="uid://c0kto6acrobgm" path="res://student.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bf1rel7rf2q3p" path="res://an1_st.png" id="2_lquwl"]
+[ext_resource type="Texture2D" uid="uid://hr8bwwvg0v2b" path="res://an2_st.png" id="3_7mycd"]
+[ext_resource type="Texture2D" uid="uid://db1jhgke0g14y" path="res://an3_st.png" id="4_272bh"]
+[ext_resource type="FontFile" uid="uid://d4j8mqh0ge87o" path="res://Xolonium-Regular.ttf" id="5_lquwl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcwvg"]
+animations = [{
+"frames": [{
+"duration": 1.1,
+"texture": ExtResource("2_lquwl")
+}, {
+"duration": 1.1,
+"texture": ExtResource("3_7mycd")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_272bh")
+}],
+"loop": true,
+"name": &"click",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lquwl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.1,
+"texture": ExtResource("2_lquwl")
+}, {
+"duration": 1.1,
+"texture": ExtResource("3_7mycd")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_272bh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bvp3"]
+radius = 67.0
+height = 390.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1bvp3")
+
+[node name="Charecter" type="AnimatedSprite2D" parent="."]
+position = Vector2(326, 496)
+sprite_frames = SubResource("SpriteFrames_pcwvg")
+animation = &"click"
+frame = 1
+frame_progress = 0.535542
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 91.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("5_lquwl")
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 62.0
+offset_right = 81.0
+offset_bottom = 145.0
+
+[node name="ResultLabel" type="Label" parent="."]
+offset_left = 250.0
+offset_top = 72.0
+offset_right = 290.0
+offset_bottom = 95.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(338, 493)
+shape = SubResource("CapsuleShape2D_1bvp3")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]
