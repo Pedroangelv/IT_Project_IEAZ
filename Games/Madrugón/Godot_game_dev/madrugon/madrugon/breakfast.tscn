@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://byerflq6ehjw5"]
+
+[ext_resource type="Texture2D" uid="uid://bj1b6h4p6l5iq" path="res://Bread.png" id="1_ufjwc"]
+[ext_resource type="Script" uid="uid://cd0bmy3aqtd2m" path="res://breakfast.gd" id="2_ufjwc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a32bf"]
+height = 20.0
+
+[node name="breakfast" type="Sprite2D"]
+texture = ExtResource("1_ufjwc")
+script = ExtResource("2_ufjwc")
+
+[node name="interaction" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction"]
+shape = SubResource("CapsuleShape2D_a32bf")
+
+[connection signal="body_entered" from="interaction" to="." method="_on_interaction_body_entered"]

@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://ce8qw3bejoad4"]
+
+[ext_resource type="Texture2D" uid="uid://dlt4oj1gs26t5" path="res://an1_st.png" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://bj1b6h4p6l5iq" path="res://Bread.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://ikxghyrgch0b" path="res://an2_st.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://b3j4xiiuplvor" path="res://an3_st.png" id="3_hqtel"]
+
+[sub_resource type="GDScript" id="GDScript_4flbx"]
+resource_name = "player.gd"
+script/source = "extends CharacterBody2D
+
+var is_jumping = false
+var is_dying = false
+const SPEED = 150.0
+const JUMP_VELOCITY = -250.0
+
+@onready var animatedsprite2d = $AnimatedSprite2D
+func _ready():
+	add_to_group(\"Player\")
+	
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	else:
+		is_jumping = false
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		is_jumping = true
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	update_animation(direction)
+	move_and_slide()
+func update_animation(direction):
+	if is_jumping:
+		animatedsprite2d.play(\"jump\")
+	elif direction != 0:
+		animatedsprite2d.flip_h = (direction < 0)
+		animatedsprite2d.play(\"walk \")
+	else:
+		animatedsprite2d.play(\"idle\")
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4flbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hqtel")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4flbx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("2_i3pqv")
+}, {
+"duration": 1.6,
+"texture": ExtResource("3_hqtel")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i3pqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_4flbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hqtel")
+}],
+"loop": true,
+"name": &"walk ",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
+radius = 4.0
+height = 18.0
+
+[node name="player" type="CharacterBody2D"]
+script = SubResource("GDScript_4flbx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10.2383, 5.20833)
+scale = Vector2(0.220218, 0.151042)
+sprite_frames = SubResource("SpriteFrames_onrkg")
+animation = &"die"
+frame = 1
+frame_progress = 0.486834
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 6)
+shape = SubResource("CapsuleShape2D_i3pqv")
