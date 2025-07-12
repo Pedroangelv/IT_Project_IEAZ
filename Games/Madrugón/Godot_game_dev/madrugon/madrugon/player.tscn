@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce8qw3bejoad4"]
+[gd_scene load_steps=7 format=3 uid="uid://ce8qw3bejoad4"]
 
 [ext_resource type="Texture2D" uid="uid://dlt4oj1gs26t5" path="res://an1_st.png" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://bj1b6h4p6l5iq" path="res://Bread.png" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://ikxghyrgch0b" path="res://an2_st.png" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://b3j4xiiuplvor" path="res://an3_st.png" id="3_hqtel"]
 
@@ -52,9 +51,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_4flbx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_hqtel")
 }],
 "loop": true,
 "name": &"die",
@@ -102,12 +98,11 @@ height = 18.0
 script = SubResource("GDScript_4flbx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(10.2383, 5.20833)
-scale = Vector2(0.220218, 0.151042)
+position = Vector2(10, 6)
+scale = Vector2(0.0501879, 0.0476617)
 sprite_frames = SubResource("SpriteFrames_onrkg")
 animation = &"die"
-frame = 1
-frame_progress = 0.486834
+frame_progress = 0.855168
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10, 6)
