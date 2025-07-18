@@ -1,56 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce8qw3bejoad4"]
+[gd_scene load_steps=9 format=3 uid="uid://ce8qw3bejoad4"]
 
-[ext_resource type="Texture2D" uid="uid://dlt4oj1gs26t5" path="res://an1_st.png" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://ikxghyrgch0b" path="res://an2_st.png" id="2_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://b3j4xiiuplvor" path="res://an3_st.png" id="3_hqtel"]
-
-[sub_resource type="GDScript" id="GDScript_4flbx"]
-resource_name = "player.gd"
-script/source = "extends CharacterBody2D
-
-var is_jumping = false
-var is_dying = false
-const SPEED = 150.0
-const JUMP_VELOCITY = -250.0
-
-@onready var animatedsprite2d = $AnimatedSprite2D
-func _ready():
-	add_to_group(\"Player\")
-	
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	else:
-		is_jumping = false
-	# Handle jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		is_jumping = true
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	update_animation(direction)
-	move_and_slide()
-func update_animation(direction):
-	if is_jumping:
-		animatedsprite2d.play(\"jump\")
-	elif direction != 0:
-		animatedsprite2d.flip_h = (direction < 0)
-		animatedsprite2d.play(\"walk \")
-	else:
-		animatedsprite2d.play(\"idle\")
-"
+[ext_resource type="Texture2D" uid="uid://4msvs258t6i8" path="res://an3.png" id="1_hqtel"]
+[ext_resource type="Script" uid="uid://dpqq6c0fyjjn5" path="res://player.gd" id="1_sweqy"]
+[ext_resource type="Texture2D" uid="uid://bwx6exeso1a57" path="res://an6.png" id="2_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bh2lekcp4fd5y" path="res://an2.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://skle4u61jp3w" path="res://an4.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://sakn824lel8q" path="res://an5.png" id="4_2hs0m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4flbx")
+"texture": ExtResource("2_2hs0m")
 }],
 "loop": true,
 "name": &"die",
@@ -58,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4flbx")
+"texture": ExtResource("2_hqtel")
 }],
 "loop": true,
 "name": &"idle",
@@ -66,10 +27,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 0.2,
-"texture": ExtResource("2_i3pqv")
+"texture": ExtResource("3_sweqy")
 }, {
-"duration": 1.6,
-"texture": ExtResource("3_hqtel")
+"duration": 1.5,
+"texture": ExtResource("4_2hs0m")
 }],
 "loop": true,
 "name": &"jump",
@@ -77,33 +38,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_i3pqv")
+"texture": ExtResource("2_hqtel")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_4flbx")
+"texture": ExtResource("3_sweqy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_hqtel")
+"texture": ExtResource("1_hqtel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2hs0m")
 }],
 "loop": true,
 "name": &"walk ",
-"speed": 4.0
+"speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
-radius = 4.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(8.75, 24)
 
 [node name="player" type="CharacterBody2D"]
-script = SubResource("GDScript_4flbx")
+script = ExtResource("1_sweqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(10, 6)
-scale = Vector2(0.0501879, 0.0476617)
+position = Vector2(19.5, 13.5)
+scale = Vector2(0.75, 0.805556)
 sprite_frames = SubResource("SpriteFrames_onrkg")
-animation = &"die"
-frame_progress = 0.855168
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10, 6)
-shape = SubResource("CapsuleShape2D_i3pqv")
+texture_filter = 1
+position = Vector2(17.375, 15)
+shape = SubResource("RectangleShape2D_hqtel")

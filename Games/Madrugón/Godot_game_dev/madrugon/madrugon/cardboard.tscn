@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dxdcne12d5oe5"]
+[gd_scene load_steps=2 format=3 uid="uid://dxdcne12d5oe5"]
+
+[ext_resource type="Texture2D" uid="uid://dryrcwr38onku" path="res://cardboard.png" id="1_oyatm"]
 
 [node name="cardboard" type="Sprite2D"]
+texture = ExtResource("1_oyatm")
