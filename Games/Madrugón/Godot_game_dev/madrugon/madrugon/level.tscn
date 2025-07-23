@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://byerflq6ehjw5" path="res://breakfast.tscn" id="4_0b4ue"]
 [ext_resource type="Texture2D" uid="uid://bj1b6h4p6l5iq" path="res://Bread.png" id="5_n6hdu"]
 [ext_resource type="Texture2D" uid="uid://dryrcwr38onku" path="res://cardboard.png" id="6_km5ld"]
-[ext_resource type="Texture2D" uid="uid://3lmi4f3kig0h" path="res://single_dollar.png" id="7_i2t4f"]
+[ext_resource type="Texture2D" uid="uid://dbf8a3imtam2m" path="res://money.png" id="7_n6hdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("1_u52ul")
@@ -311,8 +311,8 @@ text = "0/1"
 
 [node name="MoneyIcon" type="TextureRect" parent="HUD/ItemsContainer"]
 layout_mode = 2
-texture = ExtResource("7_i2t4f")
-expand_mode = 3
+texture = ExtResource("7_n6hdu")
+stretch_mode = 3
 
 [node name="MoneyLabel" type="Label" parent="HUD/ItemsContainer"]
 layout_mode = 2
