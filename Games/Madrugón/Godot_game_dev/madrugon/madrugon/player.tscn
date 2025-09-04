@@ -55,7 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
-size = Vector2(8.75, 24)
+size = Vector2(11.375, 25)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_sweqy")
@@ -64,9 +64,10 @@ script = ExtResource("1_sweqy")
 position = Vector2(19.5, 13.5)
 scale = Vector2(0.75, 0.805556)
 sprite_frames = SubResource("SpriteFrames_onrkg")
-animation = &"idle"
+animation = &"walk "
+frame_progress = 0.113695
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
-position = Vector2(17.375, 15)
+position = Vector2(19.6875, 13.5)
 shape = SubResource("RectangleShape2D_hqtel")
