@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cgv6xansjm4u1"]
+[gd_scene load_steps=15 format=4 uid="uid://cgv6xansjm4u1"]
 
 [ext_resource type="Script" uid="uid://d0yqeum6k8qon" path="res://level.gd" id="1_0b4ue"]
 [ext_resource type="Texture2D" uid="uid://00v572ysjskf" path="res://chao_.png" id="1_u52ul"]
@@ -263,6 +263,9 @@ sources/0 = SubResource("TileSetAtlasSource_vonw3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3di"]
 size = Vector2(2820.5, 23)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aicyk"]
+size = Vector2(155, 144)
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0b4ue")
 
@@ -292,7 +295,7 @@ editor_draw_drag_margin = true
 position = Vector2(755, -174)
 
 [node name="cardboard" parent="TileMapLayer" instance=ExtResource("6_8cye3")]
-position = Vector2(74, 146)
+position = Vector2(1825, -90)
 
 [node name="lunch_money" parent="TileMapLayer" instance=ExtResource("7_2orkt")]
 position = Vector2(1022, -64)
@@ -300,7 +303,7 @@ position = Vector2(1022, -64)
 [node name="Pitfall" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pitfall"]
-position = Vector2(1412.75, 259)
+position = Vector2(1435, 269)
 shape = SubResource("RectangleShape2D_oi3di")
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -341,4 +344,11 @@ text = "0/1"
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="SchoolGate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SchoolGate"]
+position = Vector2(2339, 116)
+shape = SubResource("RectangleShape2D_aicyk")
+
 [connection signal="body_entered" from="Pitfall" to="TileMapLayer/player" method="_on_pitfall_body_entered"]
+[connection signal="body_entered" from="SchoolGate" to="TileMapLayer/player" method="_on_school_gate_body_entered"]

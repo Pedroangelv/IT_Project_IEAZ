@@ -43,4 +43,4 @@ func update_hud():
 	$HUD/ItemsContainer/CardboardIcon.modulate = Color(1.5, 1.5, 1.5) if tiene_cartulina else Color(0.5, 0.5, 0.5)
 	$HUD/ItemsContainer/MoneyIcon.modulate = Color(1.5, 1.5, 1.5) if tiene_plata else Color(0.7, 0.7, 0.7)
 func perder_por_tiempo():
-	get_tree().paused = true
+	get_tree().reload_current_scene()

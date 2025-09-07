@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1756951696|94932202';
+const CACHE_VERSION = '1757207023|1999304621';
 /** @type {string} */
 const CACHE_PREFIX = 'madrugon-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;

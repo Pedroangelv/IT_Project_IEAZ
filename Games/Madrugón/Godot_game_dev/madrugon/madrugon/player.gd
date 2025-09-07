@@ -12,6 +12,7 @@ var is_dead = false
 var is_jumping = false
 const SPEED = 150.0
 const JUMP_VELOCITY = -267.0
+const SHORT_HOP_MULTIPLIER = 0.5
 
 @onready var animatedsprite2d = $AnimatedSprite2D
 func _ready():
@@ -43,6 +44,8 @@ func _physics_process(delta: float) -> void:
 		is_jumping = true
 		has_jumped = true
 		jump_buffer_timer = 0.0
+	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
+		velocity.y *= SHORT_HOP_MULTIPLIER
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -71,3 +74,21 @@ func _on_pitfall_body_entered(body: Node2D) -> void:
 		$AnimatedSprite2D.play("die")  # Asegúrate que esta animación exista
 		await get_tree().create_timer(1).timeout
 		get_tree().reload_current_scene()
+
+
+func _on_school_gate_body_entered(body: Node2D) -> void:
+	if body == self:
+		var level = get_tree().current_scene  # Referencia al Level actual
+		
+		if level.tiene_pan and level.tiene_cartulina and level.tiene_plata:
+			print("✅ Llegaste con todo, pasaste el nivel.")
+			get_tree().change_scene_to_file("res://next_level.tscn")
+		else:
+			if not level.tiene_pan:
+				print("❌ Llegaste sin desayunar.")
+			elif not level.tiene_cartulina:
+				print("❌ Llegaste sin la cartulina.")
+			elif not level.tiene_plata:
+				print("❌ Llegaste sin plata del almuerzo.")
+			
+			get_tree().reload_current_scene()
