@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cgv6xansjm4u1"]
+[gd_scene load_steps=16 format=4 uid="uid://cgv6xansjm4u1"]
 
 [ext_resource type="Script" uid="uid://d0yqeum6k8qon" path="res://level.gd" id="1_0b4ue"]
 [ext_resource type="Texture2D" uid="uid://00v572ysjskf" path="res://chao_.png" id="1_u52ul"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cymj3623ryvs0" path="res://lunch_money.tscn" id="7_2orkt"]
 [ext_resource type="Texture2D" uid="uid://c1tfue2msll6l" path="res://money.png" id="7_n6hdu"]
 [ext_resource type="Texture2D" uid="uid://udhufnpu8ccb" path="res://d1.png" id="8_km5ld"]
+[ext_resource type="Texture2D" uid="uid://d0t01e6e7a15l" path="res://pixil-frame-0.png" id="11_2orkt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("1_u52ul")
@@ -347,8 +348,13 @@ offset_bottom = 23.0
 [node name="SchoolGate" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SchoolGate"]
-position = Vector2(2339, 116)
+position = Vector2(2341, 138)
 shape = SubResource("RectangleShape2D_aicyk")
+
+[node name="Sprite2D" type="Sprite2D" parent="SchoolGate"]
+position = Vector2(2341, 157)
+scale = Vector2(2.80556, 2.36111)
+texture = ExtResource("11_2orkt")
 
 [connection signal="body_entered" from="Pitfall" to="TileMapLayer/player" method="_on_pitfall_body_entered"]
 [connection signal="body_entered" from="SchoolGate" to="TileMapLayer/player" method="_on_school_gate_body_entered"]
