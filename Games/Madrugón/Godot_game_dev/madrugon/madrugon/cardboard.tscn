@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://b45xqm5njyw2f" path="res://cardboard.gd" id="2_l450b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l450b"]
-radius = 15.7143
-height = 31.4286
+radius = 18.5714
+height = 37.1429
 
 [node name="cardboard" type="Sprite2D"]
 position = Vector2(6, 7)
