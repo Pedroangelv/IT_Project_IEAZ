@@ -8,51 +8,49 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Menú de navegación -->
+  <header>
+    <h1>Portal Institucional Zawadzky</h1>
     <nav>
-      <button onclick="showSection('menu-minijuegos')">Minijuegos</button>
-      <button onclick="showSection('historia')">Historia</button>
-      <button onclick="showSection('simbolos')">Símbolos</button>
-      <button onclick="showSection('creditos')">Creditos</button>
+      <button onclick="showSection('menu-minijuegos')">🎮 Minijuegos</button>
+      <button onclick="showSection('historia')">📖 Historia</button>
+      <button onclick="showSection('simbolos')">🏫 Símbolos</button>
+      <button onclick="showSection('creditos')">👥 Créditos</button>
     </nav>
+  </header>
 
-    <!-- Sección de Menú de Minijuegos -->
-    <div id="menu-minijuegos" class="section hidden">
+  <main>
+    <section id="menu-minijuegos" class="section hidden">
       <h2>Selecciona un Minijuego</h2>
       <div id="minijuegos-container" class="grid-container"></div>
-    </div>
+    </section>
 
-    <!-- Sección de Historia -->
-    <div id="historia" class="section hidden">
+    <section id="historia" class="section hidden">
       <h2>Historia</h2>
       <p>
-        Explora la historia detrás de los símbolos y los minijuegos. Aquí
-        aprenderás sobre la institución representada.
+        Explora la historia detrás de los símbolos y minijuegos que reflejan
+        el espíritu de nuestra institución educativa.
       </p>
-    </div>
+    </section>
 
-    <!-- Sección de Símbolos -->
-    <div id="simbolos" class="section hidden">
-      <h2>Símbolos</h2>
+    <section id="simbolos" class="section hidden">
+      <h2>Símbolos Institucionales</h2>
       <p>
-        Aquí están los símbolos de la institución que podrás desbloquear al
-        ganar minijuegos.
+        Desbloquea los símbolos conforme avanzas en los minijuegos y descubre
+        su significado.
       </p>
-      <div id="simbolos-container"></div>
-    </div>
+      <div id="simbolos-container" class="grid-container"></div>
+    </section>
 
-    <!-- Seccion de creditos -->
-    <div id="creditos" class="section hidden">
-      <h2>Creditos</h2>
+    <section id="creditos" class="section hidden">
+      <h2>Créditos</h2>
       <ul id="Names">
-        <li>Pedro Angel Villa Grijalba</li>
-        <li>Andres Felipe Loaiza Escobar</li>
-        <li>Miguel Angel Loaiza Escobar</li>
-        <li>Carlos Eduardo Rojas Ceballos</li>
+        <li>Pedro Ángel Villa Grijalba (Programador)</li>
+        <li>Andrés Felipe Loaiza Escobar (Programador)</li>
+        <li>Miguel Ángel Loaiza Escobar (Redactor)</li>
       </ul>
-      
-    </div>
+    </section>
+  </main>
 
-    <script src="script.js" defer></script>
-  </body>
+  <script src="script.js" defer></script>
+</body
 </html>
