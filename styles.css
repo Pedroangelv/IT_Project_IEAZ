@@ -1,12 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+:root {
+  --bg: #f4f6f8;
+  --text: #222;
+  --primary: #4caf50;
+  --primary-light: #8bc34a;
+  --card: #fff;
+}
+
+body.dark {
+  --bg: #1c1c1c;
+  --text: #f5f5f5;
+  --primary: #81c784;
+  --primary-light: #a5d6a7;
+  --card: #2b2b2b;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f4f6f8;
-  color: #222;
+  background: var(--bg);
+  color: var(--text);
   margin: 0;
   padding: 0;
   text-align: center;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* Header */
@@ -17,12 +34,17 @@ header {
   top: 0;
   z-index: 100;
   padding: 10px 0;
+  backdrop-filter: blur(8px);
+}
+
+body.dark header {
+  background: rgba(40, 40, 40, 0.9);
 }
 
 header h1 {
   margin: 0;
   font-size: 1.5rem;
-  color: #2e7d32;
+  color: var(--primary);
 }
 
 nav {
@@ -30,7 +52,7 @@ nav {
 }
 
 button {
-  background: #4caf50;
+  background: var(--primary);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -42,14 +64,32 @@ button {
 }
 
 button:hover {
-  background: #8bc34a;
+  background: var(--primary-light);
   transform: translateY(-2px);
+}
+
+#toggle-dark {
+  background: transparent;
+  color: var(--primary);
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+#toggle-dark:hover {
+  transform: rotate(20deg);
 }
 
 /* Secciones */
 .section {
   padding: 40px 20px;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hidden {
@@ -67,11 +107,11 @@ button:hover {
 
 /* Tarjetas */
 .minijuego, .simbolo {
-  background: white;
+  background: var(--card);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
 }
 
 .minijuego:hover, .simbolo:hover {
@@ -94,7 +134,7 @@ button:hover {
 
 /* Créditos */
 #Names {
-  background: #4caf50;
+  background: var(--primary);
   color: white;
   padding: 20px;
   border-radius: 12px;
@@ -111,5 +151,10 @@ footer {
   margin-top: 40px;
   padding: 10px;
   font-size: 0.9rem;
-  color: #555;
+  color: #777;
+  transition: color 0.4s ease;
+}
+
+body.dark footer {
+  color: #ccc;
 }

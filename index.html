@@ -3,54 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menú de Minijuegos y Historia</title>
+    <title>Portal Zawadzky — Minijuegos & Símbolos</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-  <header>
-    <h1>Portal Institucional Zawadzky</h1>
-    <nav>
-      <button onclick="showSection('menu-minijuegos')">🎮 Minijuegos</button>
-      <button onclick="showSection('historia')">📖 Historia</button>
-      <button onclick="showSection('simbolos')">🏫 Símbolos</button>
-      <button onclick="showSection('creditos')">👥 Créditos</button>
-    </nav>
-  </header>
+    <header>
+      <h1>Portal Institucional Zawadzky</h1>
+      <nav>
+        <button onclick="showSection('menu-minijuegos')">🎮 Minijuegos</button>
+        <button onclick="showSection('historia')">📖 Historia</button>
+        <button onclick="showSection('simbolos')">🏫 Símbolos</button>
+        <button onclick="showSection('creditos')">👥 Créditos</button>
+        <button id="toggle-dark">🌙</button>
+      </nav>
+    </header>
 
-  <main>
-    <section id="menu-minijuegos" class="section hidden">
-      <h2>Selecciona un Minijuego</h2>
-      <div id="minijuegos-container" class="grid-container"></div>
-    </section>
+    <main>
+      <section id="menu-minijuegos" class="section hidden">
+        <h2>Selecciona un Minijuego</h2>
+        <div id="minijuegos-container" class="grid-container"></div>
+      </section>
 
-    <section id="historia" class="section hidden">
-      <h2>Historia</h2>
-      <p>
-        Explora la historia detrás de los símbolos y minijuegos que reflejan
-        el espíritu de nuestra institución educativa.
-      </p>
-    </section>
+      <section id="historia" class="section hidden">
+        <h2>Historia</h2>
+        <p>
+          Explora la historia detrás de los símbolos y minijuegos que reflejan
+          el espíritu de nuestra institución educativa.
+        </p>
+      </section>
 
-    <section id="simbolos" class="section hidden">
-      <h2>Símbolos Institucionales</h2>
-      <p>
-        Desbloquea los símbolos conforme avanzas en los minijuegos y descubre
-        su significado.
-      </p>
-      <div id="simbolos-container" class="grid-container"></div>
-    </section>
+      <section id="simbolos" class="section hidden">
+        <h2>Símbolos Institucionales</h2>
+        <p>
+          Desbloquea los símbolos conforme avanzas en los minijuegos y descubre
+          su significado.
+        </p>
+        <div id="simbolos-container" class="grid-container"></div>
+      </section>
 
-    <section id="creditos" class="section hidden">
-      <h2>Créditos</h2>
-      <ul id="Names">
-        <li>Pedro Ángel Villa Grijalba (Programador)</li>
-        <li>Andrés Felipe Loaiza Escobar (Programador)</li>
-        <li>Miguel Ángel Loaiza Escobar (Redactor)</li>
-      </ul>
-    </section>
-  </main>
+      <section id="creditos" class="section hidden">
+        <h2>Créditos</h2>
+        <ul id="Names">
+          <li>Pedro Ángel Villa Grijalba</li>
+          <li>Andrés Felipe Loaiza Escobar</li>
+          <li>Miguel Ángel Loaiza Escobar</li>
+          <li>Carlos Eduardo Rojas Ceballos</li>
+        </ul>
+      </section>
+    </main>
 
-  <script src="script.js" defer></script>
-</body
+    <footer>
+      <p>© 2025 Institución Educativa Zawadzky — Proyecto IT</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
 </html>

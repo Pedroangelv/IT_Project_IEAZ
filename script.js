@@ -6,35 +6,28 @@ document.addEventListener("DOMContentLoaded", function () {
   inicializarSimbolos();
   cargarSimbolos();
 });
+const darkBtn = document.getElementById("toggle-dark");
+darkBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  darkBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+});
 
 // Función para mostrar y ocultar secciones
 function showSection(sectionId) {
-  // Buscar la sección que se va a mostrar/ocultar
-  let section = document.getElementById(sectionId);
+   let section = document.getElementById(sectionId);
 
-  // Verificar si la sección ya está visible
-  if (section.classList.contains("hidden")) {
-    // Ocultar todas las secciones
-    document.querySelectorAll(".section").forEach((section) => {
-      section.classList.add("hidden");
-    });
+  document.querySelectorAll(".section").forEach((s) => {
+    s.classList.remove("visible");
+    s.classList.add("hidden");
+  });
 
-    // Mostrar la sección seleccionada
+  setTimeout(() => {
     section.classList.remove("hidden");
+    setTimeout(() => section.classList.add("visible"), 50);
+  }, 200);
 
-    // Cargar contenido dinámico en minijuegos
-    if (sectionId === "menu-minijuegos") {
-      cargarMenuMinijuegos();
-    }
-
-    // Cargar símbolos desbloqueables
-    if (sectionId === "simbolos") {
-      cargarSimbolos();
-    }
-  } else {
-    // Si la sección ya está visible, la ocultamos
-    section.classList.add("hidden");
-  }
+  if (sectionId === "menu-minijuegos") cargarMenuMinijuegos();
+  if (sectionId === "simbolos") cargarSimbolos();
 }
 
 //Funcion para cargar la pagina del minijuego
