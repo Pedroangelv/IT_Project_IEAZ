@@ -8,21 +8,22 @@ body {
 }
 
 nav {
-  margin-bottom: 20px;
-}
+  margin-bottom: 0px;
+  }
 
 button {
   background-color: #4caf50; /* Verde */
   color: white;
   border: none;
-  padding: 10px 20px;
-  margin: 5px;
+  padding: 30px 30px;
+  margin: 8px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
+  align-content: center;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #98b41b;
 }
 
 .hidden {
