@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=4 uid="uid://cgv6xansjm4u1"]
 
 [ext_resource type="Script" uid="uid://d0yqeum6k8qon" path="res://level.gd" id="1_0b4ue"]
-[ext_resource type="Texture2D" uid="uid://00v572ysjskf" path="res://chao_.png" id="1_u52ul"]
+[ext_resource type="Texture2D" uid="uid://00v572ysjskf" path="res://Assets/chao_.png" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://ce8qw3bejoad4" path="res://player.tscn" id="2_vonw3"]
 [ext_resource type="PackedScene" uid="uid://byerflq6ehjw5" path="res://breakfast.tscn" id="4_0b4ue"]
-[ext_resource type="Texture2D" uid="uid://bj1b6h4p6l5iq" path="res://Bread.png" id="5_n6hdu"]
+[ext_resource type="Texture2D" uid="uid://bj1b6h4p6l5iq" path="res://Assets/Bread.png" id="5_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://dxdcne12d5oe5" path="res://cardboard.tscn" id="6_8cye3"]
-[ext_resource type="Texture2D" uid="uid://dryrcwr38onku" path="res://cardboard.png" id="6_km5ld"]
+[ext_resource type="Texture2D" uid="uid://dryrcwr38onku" path="res://Assets/cardboard.png" id="6_km5ld"]
 [ext_resource type="PackedScene" uid="uid://cymj3623ryvs0" path="res://lunch_money.tscn" id="7_2orkt"]
-[ext_resource type="Texture2D" uid="uid://c1tfue2msll6l" path="res://money.png" id="7_n6hdu"]
-[ext_resource type="Texture2D" uid="uid://udhufnpu8ccb" path="res://d1.png" id="8_km5ld"]
-[ext_resource type="Texture2D" uid="uid://d0t01e6e7a15l" path="res://pixil-frame-0.png" id="11_2orkt"]
+[ext_resource type="Texture2D" uid="uid://c1tfue2msll6l" path="res://Assets/money.png" id="7_n6hdu"]
+[ext_resource type="Texture2D" uid="uid://udhufnpu8ccb" path="res://Assets/d1.png" id="8_km5ld"]
+[ext_resource type="Texture2D" uid="uid://d0t01e6e7a15l" path="res://Assets/pixil-frame-0.png" id="11_2orkt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
 texture = ExtResource("1_u52ul")
@@ -268,6 +268,7 @@ size = Vector2(2820.5, 23)
 size = Vector2(155, 144)
 
 [node name="Level" type="Node2D"]
+position = Vector2(0, 1)
 script = ExtResource("1_0b4ue")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

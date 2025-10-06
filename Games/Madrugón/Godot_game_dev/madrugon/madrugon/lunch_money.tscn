@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cymj3623ryvs0"]
 
-[ext_resource type="Texture2D" uid="uid://c1tfue2msll6l" path="res://money.png" id="1_klc0w"]
+[ext_resource type="Texture2D" uid="uid://c1tfue2msll6l" path="res://Assets/money.png" id="1_klc0w"]
 [ext_resource type="Script" uid="uid://0burvpbnurxe" path="res://lunch_money.gd" id="2_pea8y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pea8y"]

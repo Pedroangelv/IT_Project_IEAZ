@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://00v572ysjskf"
-path="res://.godot/imported/chao_.png-63c0a35a624ae594b3af8d7e70c8fe70.ctex"
+uid="uid://dryrcwr38onku"
+path="res://.godot/imported/cardboard.png-76c7ff7836a2c59ca1dc08e2197ea4f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://chao_.png"
-dest_files=["res://.godot/imported/chao_.png-63c0a35a624ae594b3af8d7e70c8fe70.ctex"]
+source_file="res://Assets/cardboard.png"
+dest_files=["res://.godot/imported/cardboard.png-76c7ff7836a2c59ca1dc08e2197ea4f2.ctex"]
 
 [params]
 

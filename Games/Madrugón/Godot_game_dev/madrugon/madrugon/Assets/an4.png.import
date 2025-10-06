@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3lmi4f3kig0h"
-path="res://.godot/imported/single_dollar.png-3acda70c1ad7a1a09f111b82555167d9.ctex"
+uid="uid://skle4u61jp3w"
+path="res://.godot/imported/an4.png-d63d91c08aa0afc44fda17942eb76771.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://single_dollar.png"
-dest_files=["res://.godot/imported/single_dollar.png-3acda70c1ad7a1a09f111b82555167d9.ctex"]
+source_file="res://Assets/an4.png"
+dest_files=["res://.godot/imported/an4.png-d63d91c08aa0afc44fda17942eb76771.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

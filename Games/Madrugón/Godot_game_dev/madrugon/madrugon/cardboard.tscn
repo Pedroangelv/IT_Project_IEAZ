@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxdcne12d5oe5"]
 
-[ext_resource type="Texture2D" uid="uid://dryrcwr38onku" path="res://cardboard.png" id="1_oyatm"]
+[ext_resource type="Texture2D" uid="uid://dryrcwr38onku" path="res://Assets/cardboard.png" id="1_oyatm"]
 [ext_resource type="Script" uid="uid://b45xqm5njyw2f" path="res://cardboard.gd" id="2_l450b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l450b"]

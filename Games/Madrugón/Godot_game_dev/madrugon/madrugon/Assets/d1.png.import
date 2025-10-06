@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1tfue2msll6l"
-path="res://.godot/imported/money.png-2dbfbb556abb72e251439c6d6ada9c17.ctex"
+uid="uid://udhufnpu8ccb"
+path="res://.godot/imported/d1.png-25119ba1639f313c14767768aab82f88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://money.png"
-dest_files=["res://.godot/imported/money.png-2dbfbb556abb72e251439c6d6ada9c17.ctex"]
+source_file="res://Assets/d1.png"
+dest_files=["res://.godot/imported/d1.png-25119ba1639f313c14767768aab82f88.ctex"]
 
 [params]
 
@@ -21,9 +21,9 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
+roughness/mode=1
 roughness/src_normal=""
 process/fix_alpha_border=false
 process/premult_alpha=false

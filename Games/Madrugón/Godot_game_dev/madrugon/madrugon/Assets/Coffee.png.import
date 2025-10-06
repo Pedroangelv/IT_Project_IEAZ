@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwx6exeso1a57"
-path="res://.godot/imported/an6.png-cdcb3b1fea145777515c3cf03fc4b2eb.ctex"
+uid="uid://blrewg3tiw8sn"
+path="res://.godot/imported/Coffee.png-fdbd218ef41f9020a2503033ae1b83cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://an6.png"
-dest_files=["res://.godot/imported/an6.png-cdcb3b1fea145777515c3cf03fc4b2eb.ctex"]
+source_file="res://Assets/Coffee.png"
+dest_files=["res://.godot/imported/Coffee.png-fdbd218ef41f9020a2503033ae1b83cf.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

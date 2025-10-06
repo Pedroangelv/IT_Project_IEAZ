@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://ce8qw3bejoad4"]
 
-[ext_resource type="Texture2D" uid="uid://4msvs258t6i8" path="res://an3.png" id="1_hqtel"]
+[ext_resource type="Texture2D" uid="uid://4msvs258t6i8" path="res://Assets/an3.png" id="1_hqtel"]
 [ext_resource type="Script" uid="uid://dpqq6c0fyjjn5" path="res://player.gd" id="1_sweqy"]
-[ext_resource type="Texture2D" uid="uid://bwx6exeso1a57" path="res://an6.png" id="2_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://bh2lekcp4fd5y" path="res://an2.png" id="2_hqtel"]
-[ext_resource type="Texture2D" uid="uid://skle4u61jp3w" path="res://an4.png" id="3_sweqy"]
-[ext_resource type="Texture2D" uid="uid://sakn824lel8q" path="res://an5.png" id="4_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bwx6exeso1a57" path="res://Assets/an6.png" id="2_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bh2lekcp4fd5y" path="res://Assets/an2.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://skle4u61jp3w" path="res://Assets/an4.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://sakn824lel8q" path="res://Assets/an5.png" id="4_2hs0m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
