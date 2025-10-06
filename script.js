@@ -49,7 +49,7 @@ function cargarMenuMinijuegos() {
       nombre: "Madrugón",
       imagen: "",
       id: "Madrugón",
-      archivo: "Games/Madrugón/Godot_game_dev/madrugon/madrugon/test1/madrugon.html",
+      archivo: "Games/Madrugón/test1/madrugon.html",
     },
     {
       nombre: "Basura",

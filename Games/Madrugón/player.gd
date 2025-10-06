@@ -10,7 +10,7 @@ var jump_buffer_timer := 0.0
 
 var is_dead = false
 var is_jumping = false
-const SPEED = 165.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -267.0
 const SHORT_HOP_MULTIPLIER = 0.5
 
